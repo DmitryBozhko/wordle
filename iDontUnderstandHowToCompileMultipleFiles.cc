@@ -8,7 +8,7 @@ class wordle {
       std::string guess;
       int numGuesses = 0; 
       int finalGreen = 0; // Check the if the answer is right 
-      for (int i = 0; i < 6; i++){
+      while (numGuesses <= 6){
         std::cout << "Please Enter Guess\n";
         std::cin >> guess;
         int green = 0; // save the green letters cuz if green letters same as word size = win
@@ -30,8 +30,8 @@ class wordle {
           finalGreen = green;
           break;
         }
+        numGuesses++;
       }
-      numGuesses++;
       if (finalGreen == answer_.size()){
         std::cout << "You WON, It took you " << numGuesses << " guesses" << std::endl;
       } else {
